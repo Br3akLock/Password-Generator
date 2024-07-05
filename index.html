@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Gerador de Senhas</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Gerador de Senhas</h1>
+        <div class="password-output hidden" id="password-output"></div>
+        <div class="options">
+            <div>
+                <label for="length">Número de caracteres da senha:</label>
+                <div class="range-container">
+                    <input type="range" id="length" min="1" max="50" value="12" oninput="updateLengthValue(this.value)">
+                    <span id="length-value" class="range-value">12</span>
+                </div>
+                
+                <label><input type="checkbox" id="pronounceable"> Fácil de pronunciar</label>
+                <label><input type="checkbox" id="readable"> Fácil de ler</label>
+                <label><input type="checkbox" id="all-chars" checked> Todos os caracteres</label>
+            </div>
+            
+            <div>
+                <label><input type="checkbox" id="uppercase" checked> Letras maiúsculas</label>
+                <label><input type="checkbox" id="lowercase" checked> Letras minúsculas</label>
+                <label><input type="checkbox" id="numbers" checked> Números</label>
+                <label><input type="checkbox" id="symbols" checked> Símbolos</label>
+            </div>
+        </div>
+        
+        <button onclick="generatePassword()">Gerar Senha</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
